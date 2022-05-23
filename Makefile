@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/05/23 23:14:11 by pharbst          ###   ########.fr        #
+#    Updated: 2022/05/24 01:12:48 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ FILES	=	ft_atoi.c \
 			ft_lstiter.c\
 			ft_lstmap.c\
 			
+			ft_chartostr.c\
 			ft_itohex.c\
+			ft_strjoinchar.c\
 			ft_strjoinfree.c\
 			ft_strlower.c\
 			ft_strupper.c\
