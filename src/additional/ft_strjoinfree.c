@@ -12,14 +12,19 @@
 
 #include "../../libft.h"
 
-char	*ft_strjoinfree(char const *str1, char const *str2)
+char	*ft_strjoinfree(char *str1, char *str2)
 {
 	size_t	len1;
 	size_t	len2;
 	char	*dest;
 
-	if (!str1 || !str2)
-		return (NULL);
+	if (!str1)
+	{
+		str1 = malloc(1 * sizeof(char));
+		*str1 = '\0';
+	}
+	if (!str2)
+		return (str1);
 	len1 = ft_strlen(str1);
 	len2 = ft_strlen(str2);
 	dest = malloc((len1 + len2 + 1) * sizeof(char));

@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 21:41:34 by pharbst           #+#    #+#             */
-/*   Updated: 2022/05/17 21:41:36 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/05/20 21:54:53 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../../libft.h"
 
 char	*ft_strupper(char *str)
 {
