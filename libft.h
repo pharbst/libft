@@ -69,7 +69,7 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*ft_itohex(unsigned long i);
-char	*ft_strjoinfree(char const *str1, char const *str2);
+char	*ft_strjoinfree(char *str1, char *str2);
 char	*ft_strlower(char *str);
 char	*ft_strupper(char *str);
 char	*ft_uitoa(unsigned int n);

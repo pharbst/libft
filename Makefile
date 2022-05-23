@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/05/17 21:06:27 by pharbst          ###   ########.fr        #
+#    Updated: 2022/05/23 23:14:11 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ FILES	=	ft_atoi.c \
 			ft_substr.c\
 			ft_strmapi.c\
 			ft_striteri.c\
+			
 			ft_lstnew.c\
 			ft_lstadd_front.c\
 			ft_lstsize.c\
@@ -60,7 +61,13 @@ FILES	=	ft_atoi.c \
 			ft_lstdelone.c\
 			ft_lstclear.c\
 			ft_lstiter.c\
-			ft_lstmap.c
+			ft_lstmap.c\
+			
+			ft_itohex.c\
+			ft_strjoinfree.c\
+			ft_strlower.c\
+			ft_strupper.c\
+			ft_uitoa.c
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
