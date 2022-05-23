@@ -33,5 +33,6 @@ char	*ft_strjoinfree(char *str1, char *str2)
 	ft_memcpy(dest, str1, (len1 + 1));
 	ft_memcpy((dest + len1), str2, (len2 + 1));
 	free(str1);
+	free(str2);
 	return (dest);
 }
