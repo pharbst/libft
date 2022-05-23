@@ -6,9 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 00:24:26 by pharbst           #+#    #+#             */
-/*   Updated: 2022/05/24 00:37:49 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/05/24 01:22:41 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../libft.h"
 
 char	*ft_strjoinchar(char *str, int c)
 {
@@ -17,6 +19,7 @@ char	*ft_strjoinchar(char *str, int c)
 
 	if (!str)
 	{
+		ret_str = malloc(2 * sizeof(char));
 		*ret_str = c;
 		ret_str[1] = '\0';
 		return (ret_str);

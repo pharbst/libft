@@ -6,9 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:08:24 by pharbst           #+#    #+#             */
-/*   Updated: 2022/05/24 01:10:15 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/05/24 01:21:54 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../libft.h"
 
 char	*ft_chartostr(int c)
 {
