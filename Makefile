@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/05/24 23:23:08 by pharbst          ###   ########.fr        #
+#    Updated: 2022/05/24 20:30:52 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,6 @@ FILES	=	ft_atoi.c \
 			ft_substr.c\
 			ft_strmapi.c\
 			ft_striteri.c\
-			
 			ft_lstnew.c\
 			ft_lstadd_front.c\
 			ft_lstsize.c\
@@ -62,7 +61,6 @@ FILES	=	ft_atoi.c \
 			ft_lstclear.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
-			
 			ft_bufferjoin.c\
 			ft_chartostr.c\
 			ft_itohex.c\
