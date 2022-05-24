@@ -68,6 +68,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+int			ft_bufferjoin(char **buff, char *jstr, int buff_len, int jlen);
 char		*ft_chartostr(int c);
 char		*ft_itohex(unsigned long i);
 char		*ft_strjoinchar(char *str, int c);
