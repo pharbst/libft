@@ -21,6 +21,8 @@ char	*ft_strjoinfree(char *str1, char *str2)
 	if (!str1)
 	{
 		str1 = malloc(1 * sizeof(char));
+		if (!str1)
+			return (NULL);
 		*str1 = '\0';
 	}
 	if (!str2)
