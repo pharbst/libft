@@ -16,20 +16,17 @@ static char	*ft_reverse(char *a)
 {
 	int		i;
 	int		len;
-	char	*b;
+	char	b[10];
 
 	i = 0;
 	len = ft_strlen(a);
-	b = malloc((len) + 1 * sizeof(char));
-	if (!b)
-		return (NULL);
 	while (len--)
 		b[i++] = a[len];
 	b[i] = '\0';
 	return (b);
 }
 
-static char	*ft_convert(unsigned long  i, char neg)
+static char	*ft_convert(unsigned long i, char neg)
 {
 	char	ret[33];
 	int		n;

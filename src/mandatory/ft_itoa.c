@@ -20,8 +20,6 @@ static char	*ft_reverse(char *a)
 
 	i = 0;
 	len = ft_strlen(a);
-	if (!b)
-		return (NULL);
 	while (len--)
 		b[i++] = a[len];
 	b[i] = '\0';
