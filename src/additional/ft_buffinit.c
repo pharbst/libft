@@ -6,13 +6,13 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 17:25:06 by pharbst           #+#    #+#             */
-/*   Updated: 2022/06/30 17:59:44 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/06/30 19:01:58 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-t_buff	ft_buffinit(void)
+t_buff	*ft_buffinit(void)
 {
 	t_buff	buff;
 
