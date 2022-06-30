@@ -23,6 +23,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_args {
+	int maxlen;
+	int len;
+	char *buffer;
+	char *jstr;
+	int jlen;
+}	t_buff;
+
 int			ft_atoi(const char *src);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t n, size_t size);
@@ -69,6 +77,7 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int			ft_bufferjoin(char **buff, char *jstr, int buff_len, int jlen);
+t_buff		ft_buffinit();
 char		*ft_chartostr(int c);
 char		*ft_itohex(unsigned long i);
 char		*ft_strjoinchar(char *str, int c);

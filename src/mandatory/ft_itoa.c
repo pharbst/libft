@@ -16,11 +16,10 @@ static char	*ft_reverse(char *a)
 {
 	int		i;
 	int		len;
-	char	*b;
+	char	b[12];
 
 	i = 0;
 	len = ft_strlen(a);
-	b = malloc((len) + 1 * sizeof(char));
 	if (!b)
 		return (NULL);
 	while (len--)
@@ -56,9 +55,9 @@ char	*ft_itoa(int n)
 
 	neg = 0;
 	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+		return ("-2147483648");
 	if (n == 0)
-		return (ft_strdup("0"));
+		return ("0");
 	n2 = n;
 	if (n < 0)
 	{
