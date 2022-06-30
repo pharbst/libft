@@ -24,11 +24,12 @@ typedef struct s_list
 }	t_list;
 
 typedef struct s_args {
-	int maxlen;
-	int len;
-	char *buffer;
-	char *jstr;
-	int jlen;
+	int		maxlen;
+	int		len;
+	char	*buffer;
+	char	*jstr;
+	char	*new_buff;
+	int		jlen;
 }	t_buff;
 
 int			ft_atoi(const char *src);
@@ -76,8 +77,8 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int			ft_bufferjoin(char **buff, char *jstr, int buff_len, int jlen);
-t_buff		ft_buffinit();
+t_buff		*ft_bufferjoin(t_buff *buff);
+t_buff		ft_buffinit(void);
 char		*ft_chartostr(int c);
 char		*ft_itohex(unsigned long i);
 char		*ft_strjoinchar(char *str, int c);
