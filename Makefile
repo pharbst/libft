@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/06/30 17:28:22 by pharbst          ###   ########.fr        #
+#    Updated: 2022/06/30 19:45:47 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,10 +85,14 @@ $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./libft.h
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -rf $(OBJS)
+	@echo make clean libft
+	@rm -rf $(OBJS)
 	rm -rf $(OBJDIR)
 
-fclean: clean
+fclean:
+	@echo make flcean libft
+	@rm -rf $(OBJS)
+	rm -rf $(OBJDIR)
 	rm -rf $(NAME)
 
 re:	fclean all
