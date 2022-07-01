@@ -81,6 +81,7 @@ t_buff		*ft_bufferjoin(t_buff *buff);
 t_buff		*ft_buffinit(void);
 char		*ft_chartostr(int c);
 char		*ft_itohex(unsigned long i);
+char		*ft_ptrtohex(void *ptr);
 char		*ft_strjoinchar(char *str, int c);
 char		*ft_strjoinfree(char *str1, char *str2);
 char		*ft_strlower(char *str);

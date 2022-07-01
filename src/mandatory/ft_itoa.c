@@ -17,13 +17,15 @@ static char	*ft_reverse(char *a)
 	int		i;
 	int		len;
 	char	b[12];
+	char	*ret;
 
 	i = 0;
 	len = ft_strlen(a);
 	while (len--)
 		b[i++] = a[len];
 	b[i] = '\0';
-	return (b);
+	ret = b;
+	return (ret);
 }
 
 static char	*ft_420(long n, char neg)

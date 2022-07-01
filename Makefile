@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/06/30 19:45:47 by pharbst          ###   ########.fr        #
+#    Updated: 2022/07/01 02:50:47 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME	=	libft.a
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
-SRCDIR	=	./src/
+SRCDIR	=	./src
 
-OBJDIR	=	./obj/
+OBJDIR	=	./obj
 
 FILES	=	ft_atoi.c \
 			ft_bzero.c \
@@ -65,6 +65,7 @@ FILES	=	ft_atoi.c \
 			ft_buffinit.c\
 			ft_chartostr.c\
 			ft_itohex.c\
+			ft_ptrtohex.c\
 			ft_strjoinchar.c\
 			ft_strjoinfree.c\
 			ft_strlower.c\
@@ -78,6 +79,7 @@ OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
+	@echo make libft
 	@ar rcs $(NAME) $(OBJS)
 
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./libft.h

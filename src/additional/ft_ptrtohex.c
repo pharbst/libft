@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buffinit.c                                      :+:      :+:    :+:   */
+/*   ft_ptrtohex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 17:25:06 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/01 03:00:56 by pharbst          ###   ########.fr       */
+/*   Created: 2022/07/01 02:48:16 by pharbst           #+#    #+#             */
+/*   Updated: 2022/07/01 02:55:18 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-t_buff	*ft_buffinit(void)
+char	*ft_ptrtohex(void *ptr)
 {
-	t_buff	buff;
-	t_buff	*ret;
+	char	str[12];
+	char	*ret;
 
-	buff.maxlen = 0;
-	buff.len = 0;
-	buff.jlen = 0;
-	buff.buffer = NULL;
-	buff.new_buff = NULL;
-	buff.jstr = NULL;
-	ret = &buff;
+	if (!ptr)
+		return ("(null)");
+	str[0] = '0';
+	str[1] = 'x';
+	ft_memcpy(str + 2, ft_itohex((unsigned long)ptr), 10);
+	ret = str;
 	return (ret);
 }
