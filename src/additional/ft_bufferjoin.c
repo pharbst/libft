@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/06/30 18:26:37 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/01 07:12:23 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ t_buff	*ft_bufferjoin(t_buff *buff)
 					+ (*buff).jlen + 100), sizeof(char));
 		if (!(*buff).new_buff)
 			return (NULL);
-		ft_memcpy((*buff).new_buff, (*buff).buffer, (*buff).len);
-		ft_memcpy(((*buff).new_buff + (*buff).len), (*buff).jstr, (*buff).jlen);
+		ft_strlcpy((*buff).new_buff, (*buff).buffer, (*buff).len);
+		ft_strlcpy(((*buff).new_buff + (*buff).len), (*buff).jstr, (*buff).jlen);
 		if ((*buff).buffer)
 			free((*buff).buffer);
 		(*buff).buffer = (*buff).new_buff;
 	}
 	else
-		ft_memcpy((*buff).buffer + (*buff).len, (*buff).jstr, (*buff).jlen);
+		ft_strlcpy((*buff).buffer + (*buff).len, (*buff).jstr, (*buff).jlen);
 	return (buff);
 }
