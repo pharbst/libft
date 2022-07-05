@@ -6,31 +6,34 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/03 12:19:47 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/05 02:09:56 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-t_buff	*ft_bufferjoin(t_buff *buff)
+t_buff	ft_bufferjoin(t_buff buff)
 {
-	if ((*buff).jlen == 0)
-		(*buff).jlen = ft_strlen((*buff).jstr);
-	if ((*buff).len + (*buff).jlen > (*buff).maxlen)
+	if (buff.jlen == 0)
+		buff.jlen = ft_strlen(buff.jstr);
+
+
+	if (buff.len + buff.jlen > buff.maxlen)
 	{
-		(*buff).new_buff = (char *)ft_calloc(((*buff).len
-					+ (*buff).jlen + 100), sizeof(char));
-		if (!(*buff).new_buff)
-			return (NULL);
-		if ((*buff).buffer)
-			ft_strlcpy((*buff).new_buff, (*buff).buffer, (*buff).len);
-		ft_strlcpy(((*buff).new_buff + (*buff).len), (*buff).jstr, (*buff).jlen);
-		if ((*buff).buffer)
-			free((*buff).buffer);
-		(*buff).buffer = (*buff).new_buff;
+		buff.new_buff = (char *)ft_calloc((buff.len
+					+ buff.jlen + 100), sizeof(char));
+		if (!buff.new_buff)
+			exit(0);
+		buff.maxlen = buff.len + buff.jlen + 100;
+		if (buff.buffer)
+			ft_memcpy(buff.new_buff, buff.buffer, buff.len);
+		ft_memcpy(buff.new_buff + buff.len, buff.jstr, buff.jlen);
+		if (buff.buffer)
+			free(buff.buffer);
 	}
 	else
-		ft_strlcpy((*buff).buffer + (*buff).len, (*buff).jstr, (*buff).jlen);
-	(*buff).len = (*buff).len + (*buff).jlen;
+		ft_memcpy(buff.buffer + buff.len, buff.jstr, buff.jlen);
+	buff.buffer = buff.new_buff;
+	buff.len += buff.jlen;
 	return (buff);
 }
