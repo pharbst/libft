@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bufferjoin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: peter <peter@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/05 02:09:56 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/05 21:04:42 by peter            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ t_buff	ft_bufferjoin(t_buff buff)
 {
 	if (buff.jlen == 0)
 		buff.jlen = ft_strlen(buff.jstr);
-
-
 	if (buff.len + buff.jlen > buff.maxlen)
 	{
 		buff.new_buff = (char *)ft_calloc((buff.len
@@ -35,5 +33,6 @@ t_buff	ft_bufferjoin(t_buff buff)
 		ft_memcpy(buff.buffer + buff.len, buff.jstr, buff.jlen);
 	buff.buffer = buff.new_buff;
 	buff.len += buff.jlen;
+	buff.jlen = 0;
 	return (buff);
 }
