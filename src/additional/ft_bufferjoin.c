@@ -34,5 +34,5 @@ t_buff	ft_bufferjoin(t_buff buff)
 	buff.buffer = buff.new_buff;
 	buff.len += buff.jlen;
 	buff.jlen = 0;
-	return (buff);
+	return (free(buff.jstr)buff);
 }
