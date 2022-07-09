@@ -16,15 +16,14 @@ static char	*ft_reverse(char *a)
 {
 	int		i;
 	int		len;
-	char	b[10];
 	char	*ret;
 
 	i = 0;
 	len = ft_strlen(a);
+	ret = malloc((len + 1) * sizeof(char));
 	while (len--)
-		b[i++] = a[len];
-	b[i] = '\0';
-	ret = b;
+		ret[i++] = a[len];
+	ret[i] = '\0';
 	return (ret);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 21:41:41 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/01 02:55:47 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/09 11:42:40 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ static char	*ft_reverse(char *a)
 {
 	int		i;
 	int		len;
-	char	str[10];
 	char	*ret;
 
 	i = 0;
 	len = ft_strlen(a);
+	ret = malloc((len + 1) * sizeof(char));
 	while (len--)
-		str[i++] = a[len];
-	str[i] = '\0';
-	ret = str;
+		ret[i++] = a[len];
+	ret[i] = '\0';
 	return (ret);
 }
 
