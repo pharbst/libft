@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/06 02:17:10 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/09 12:14:08 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,8 @@ t_buff	ft_bufferjoin(t_buff buff)
 	buff.buffer = buff.new_buff;
 	buff.len += buff.jlen;
 	buff.jlen = 0;
-	return (free(buff.jstr), buff);
+	if (buff.jstr)
+		free(buff.jstr);
+	buff.jstr = NULL;
+	return (buff);
 }
