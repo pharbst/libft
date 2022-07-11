@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/07/03 12:44:46 by pharbst          ###   ########.fr        #
+#    Updated: 2022/07/11 16:20:59 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,16 @@ FILES	=	ft_atoi.c \
 			ft_strjoinfree.c\
 			ft_strlower.c\
 			ft_strupper.c\
-			ft_uitoa.c
+			ft_uitoa.c\
+			t_stack_addend.c\
+			t_stack_addfront.c\
+			t_stack_delete.c\
+			t_stack_delnode.c\
+			t_stack_last.c\
+			t_stack_len.c\
+			t_stack_new.c\
+			t_stack_removenode.c\
+			t_stack_searchnode.c
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
