@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/07/12 16:37:57 by pharbst          ###   ########.fr        #
+#    Updated: 2022/07/12 18:42:40 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ FILES	=	ft_atoi.c \
 			ft_lstclear.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
+			ft_atoui.c\
 			ft_bufferjoin.c\
 			ft_buffinit.c\
 			ft_chartostr.c\

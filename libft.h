@@ -84,6 +84,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+long long	ft_atoui(char *src);
 t_buff		ft_bufferjoin(t_buff buff);
 t_buff		ft_buffinit(void);
 char		*ft_chartostr(int c);
