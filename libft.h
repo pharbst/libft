@@ -36,6 +36,7 @@ typedef struct s_stack
 {
 	int				content;
 	size_t			index;
+	int				chunk;
 	struct s_stack	*next;
 }	t_stack;
 
