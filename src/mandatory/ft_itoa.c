@@ -29,7 +29,7 @@ static char	*ft_reverse(char *a)
 
 static char	*ft_420(long n, char neg)
 {
-	char	a[11];
+	char	a[12];
 	char	digit;
 	int		i;
 
