@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:43:28 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/15 19:37:55 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/15 19:52:14 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ t_stack	*ft_stackremove_node(t_stack **stack, size_t index)
 	t_stack	*stash;
 
 	if (index == 0)
-		stash = ft_stacklast(stack);
+	{
+		stash = ft_stacklast(*stack);
+		*stack = (*stack)->next;
+	}
 	else
-		stash = ft_stacksearch(stack, index - 1);
+		stash = ft_stacksearch(*stack, index - 1);
 	if (!stash)
 		return (NULL);
 	node = stash->next;
