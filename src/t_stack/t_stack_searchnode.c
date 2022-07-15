@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 12:33:39 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/11 16:21:45 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/07/15 19:25:12 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ft_stacksearch(t_stack *stack, size_t index)
 {
 	if (!stack)
 		return (NULL);
-	while (--index)
+	while (index--)
 		stack = stack->next;
 	return (stack);
 }
