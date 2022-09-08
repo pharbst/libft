@@ -23,14 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef struct s_buffer {
-	int		maxlen;
-	int		len;
-	char	*buffer;
-	char	*jstr;
-	char	*new_buff;
-	int		jlen;
-}	t_buff;
+//mandatory
 
 int			ft_atoi(const char *src);
 void		ft_bzero(void *s, size_t n);
@@ -67,6 +60,8 @@ char		*ft_substr(char const *src, unsigned int index, size_t len);
 char		*ft_strmapi(char *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+//bonus
+
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
@@ -76,16 +71,5 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-t_buff		ft_bufferjoin(t_buff buff);
-t_buff		ft_buffinit(void);
-char		*ft_chartostr(int c);
-char		*ft_itohex(unsigned long i);
-char		*ft_ptrtohex(void *ptr);
-char		*ft_strjoinchar(char *str, int c);
-char		*ft_strjoinfree(char *str1, char *str2);
-char		*ft_strlower(char *str);
-char		*ft_strupper(char *str);
-char		*ft_uitoa(unsigned int n);
 
 #endif
