@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_strnstr(const char *src, const char *substr, size_t len)
 {

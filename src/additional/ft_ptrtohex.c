@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 02:48:16 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/01 02:55:18 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/09 21:19:09 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_ptrtohex(void *ptr)
 {

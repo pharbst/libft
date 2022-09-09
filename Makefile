@@ -6,11 +6,11 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/07/03 12:44:46 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/09 21:22:24 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
+NAME	=	libftio.a
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
@@ -70,7 +70,11 @@ FILES	=	ft_atoi.c \
 			ft_strjoinfree.c\
 			ft_strlower.c\
 			ft_strupper.c\
-			ft_uitoa.c
+			ft_uitoa.c\
+			ft_printf.c\
+			ft_printf_helper.c\
+			get_next_line_bonus.c\
+			get_next_line_utils_bonus.c\
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
@@ -82,7 +86,7 @@ $(NAME):	$(OBJS)
 	@echo make libft
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./libft.h
+$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./includes/libftio.h
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 

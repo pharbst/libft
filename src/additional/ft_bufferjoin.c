@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/07/09 12:14:08 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/09 21:19:07 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../../includes/libft.h"
 
 t_buff	ft_bufferjoin(t_buff buff)
 {
