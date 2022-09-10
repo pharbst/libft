@@ -6,10 +6,11 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/10 15:16:59 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/10 15:48:25 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+PRONAME	=	libftio
 NAME	=	libftio.a
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -I includes
@@ -76,31 +77,66 @@ FILES	=	ft_atoi.c \
 			get_next_line_bonus.c\
 			get_next_line_utils_bonus.c\
 
+Black			=	\033[0;30m
+FBlack			=	\033[1;30m
+Red				=	\033[0;31m
+FRed			=	\033[1;31m
+Green			=	\033[0;32m
+FGreen			=	\033[1;32m
+Brown/Orange	=	\033[0;33m
+FBrown/Orange	=	\033[1;33m
+FYellow			=	\033[1;33m
+Yellow			=	\033[0;33m
+Blue			=	\033[0;34m
+FBlue			=	\033[1;34m
+Purple			=	\033[0;35m
+FPurple			=	\033[1;35m
+Cyan			=	\033[0;36m
+FCyan			=	\033[1;36m
+FWhite			=	\033[1;37m
+White			=	\033[0;37m
+NC				=	\033[0m
+
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
 
 
-all:	$(NAME)
+all:	allstart $(NAME) allend
 
-$(NAME):	$(OBJS)
-	@echo make libft
+$(NAME):	objstart $(OBJS) objsend
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./includes/libftio.h
+$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c includes/libftio.h
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$@"
 
 clean:
-	@echo make clean libft
+	@echo "$(FRed)make clean $(PRONAME)$(Red)"
 	@rm -rf $(OBJS)
 	rm -rf $(OBJDIR)
 
 fclean:
-	@echo make flcean libft
+	@echo "$(FRed)make flcean $(PRONAME)$(Red)"
 	@rm -rf $(OBJS)
 	rm -rf $(OBJDIR)
 	rm -rf $(NAME)
 
-re:	fclean all
+re:	restart fclean all rend
+
+allstart:
+	@echo "$(FYellow)make $(PRONAME)...$(NC)"
+allend:
+	@echo "$(FGreen)done!$(NC)"
+
+objstart:
+	@echo "$(Blue)creating object files...$(NC)"
+objsend:
+	@echo "$(Green)object files created$(NC)"
+
+restart:
+	@echo "$(FPurple)recompiling $(PRONAME)...$(NC)"
+rend:
+	@echo "$(FGreen)$(PRONAME) recompiled$(NC)"
 
 .PHONY:	all clean fclean re
