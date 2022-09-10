@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:13:35 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 21:24:32 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/10 15:15:36 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libftio.h"
+#include "libftio.h"
 
 char	*ft_new_stash(char *stash)
 {

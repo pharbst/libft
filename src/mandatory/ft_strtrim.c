@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libftio.h"
 
 static int	ft_charchr(const char *str, char ch)
 {

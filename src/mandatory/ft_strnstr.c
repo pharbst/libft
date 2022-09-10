@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libftio.h"
 
 char	*ft_strnstr(const char *src, const char *substr, size_t len)
 {

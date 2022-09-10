@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libftio.h"
 
 char	*ft_strjoinfree(char *str1, char *str2)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libftio.h"
+#include "libftio.h"
 
 t_buff	ft_printx(unsigned long nbr, t_buff buff)
 {

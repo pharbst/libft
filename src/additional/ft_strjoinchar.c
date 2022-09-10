@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 00:24:26 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 21:19:10 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/10 15:16:10 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libftio.h"
 
 char	*ft_strjoinchar(char *str, int c)
 {
