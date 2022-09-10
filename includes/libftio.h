@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 17:46:29 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/10 15:50:58 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,5 @@ t_buff		ft_printp(unsigned long ptr, t_buff buff);
 
 //GetNextLine
 char	*get_next_line(int fd);
-char	*ft_strchr(char *str, int ch);
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-char	*ft_strdup(const char *src);
-char	*ft_strjoinfree(char *str1, char *str2);
 
 #endif

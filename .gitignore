@@ -1,4 +1,5 @@
 /obj
-libft.a
+libftio.a
+*.a
 main.c
 a.out

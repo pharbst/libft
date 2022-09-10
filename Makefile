@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/10 15:48:25 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/10 15:52:29 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,6 @@ FILES	=	ft_atoi.c \
 			ft_printf.c\
 			ft_printf_helper.c\
 			get_next_line_bonus.c\
-			get_next_line_utils_bonus.c\
 
 Black			=	\033[0;30m
 FBlack			=	\033[1;30m
