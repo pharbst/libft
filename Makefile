@@ -6,12 +6,13 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/10 15:52:29 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/11 19:53:40 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PRONAME	=	libftio
 NAME	=	libftio.a
+#DEPDIR	=	libft
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -I includes
 
