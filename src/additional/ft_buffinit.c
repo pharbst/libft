@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 17:25:06 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/10 15:16:04 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:41:45 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 t_buff	ft_buffinit(void)
 {

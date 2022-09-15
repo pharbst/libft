@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 size_t	ft_strlcpy(char *dest, char *src, size_t n)
 {

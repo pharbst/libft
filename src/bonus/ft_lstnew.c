@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 t_list	*ft_lstnew(void *content)
 {

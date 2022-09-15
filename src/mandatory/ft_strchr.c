@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 char	*ft_strchr(char *str, int ch)
 {

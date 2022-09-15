@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 int	ft_strncmp(const char *src, const char *cmpstr, size_t n)
 {

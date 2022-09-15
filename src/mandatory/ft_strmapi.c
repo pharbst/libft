@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftio.h"
+#include <libftio.h>
 
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
