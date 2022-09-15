@@ -6,14 +6,14 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/08 16:46:14 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/15 16:27:55 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PRONAME	=	libft
 NAME	=	libft.a
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -Iincludes
 
 SRCDIR	=	./src
 
@@ -92,9 +92,10 @@ all:	start $(NAME) end
 $(NAME):	ostart $(OBJS) oend
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c ./libft.h
+$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c includes/libft.h
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$(NC)$@"
 
 clean:
 	@echo "$(FRed)make clean libft$(Red)"
