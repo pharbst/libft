@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 21:41:41 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 17:10:43 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/16 15:18:41 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include <libftio.h>
 
 static char	*ft_reverse(char *a)
 {

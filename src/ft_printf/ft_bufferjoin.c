@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:41:37 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 17:09:53 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/16 15:17:59 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include <libftio.h>
 
 t_buff	ft_bufferjoin(t_buff buff)
 {

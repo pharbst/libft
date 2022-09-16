@@ -6,11 +6,11 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:08:24 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/09 17:10:07 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/09/16 15:18:11 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include <libftio.h>
 
 char	*ft_chartostr(int c)
 {
