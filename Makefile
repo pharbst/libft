@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/11 19:53:40 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/16 19:22:58 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,7 @@ $(NAME):	objstart $(OBJS) objsend
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c includes/libftio.h
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
-	@echo "$@"
+	@printf "$@; "
 
 clean:
 	@echo "$(FRed)make clean $(PRONAME)$(Red)"
@@ -127,11 +127,12 @@ re:	restart fclean all rend
 allstart:
 	@echo "$(FYellow)make $(PRONAME)...$(NC)"
 allend:
-	@echo "$(FGreen)done!$(NC)"
+	@echo "$(FGreen)$(PRONAME) done!$(NC)"
 
 objstart:
 	@echo "$(Blue)creating object files...$(NC)"
 objsend:
+	@echo ""
 	@echo "$(Green)object files created$(NC)"
 
 restart:
