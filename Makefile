@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/15 16:27:55 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/19 15:56:25 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,5 +125,16 @@ restart:
 
 rend:
 	@echo "$(FGreen)recompiled$(NC)"
+
+git:	commit push
+
+commit:
+	git commit -m "$(msg)"
+
+push:
+	git push -u $(branch)
+
+update:
+	git pull
 
 .PHONY:	all clean fclean re
