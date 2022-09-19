@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/16 19:22:58 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/19 15:55:24 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,5 +139,16 @@ restart:
 	@echo "$(FPurple)recompiling $(PRONAME)...$(NC)"
 rend:
 	@echo "$(FGreen)$(PRONAME) recompiled$(NC)"
+
+git:	commit push
+
+commit:
+	git commit -m "$(msg)"
+
+push:
+	git push -u $(branch)
+
+update:
+	git pull
 
 .PHONY:	all clean fclean re
