@@ -84,6 +84,6 @@ char	**ft_split(char const *src, char c)
 	if (*src == '\0' && ft_strlen(src) == 0)
 		*cache = (NULL);
 	else
-	cache = ft_splitting(cache, src, c);
+		cache = ft_splitting(cache, src, c);
 	return (cache);
 }
