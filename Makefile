@@ -132,7 +132,7 @@ commit:
 	git commit -m "$(msg)"
 
 push:
-	git push -u $(branch)
+	git push -u
 
 update:
 	git pull
