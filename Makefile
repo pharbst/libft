@@ -6,12 +6,35 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/19 15:56:25 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/27 15:59:39 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PRONAME	=	libft
-NAME	=	libft.a
+SHELL=	/bin/bash
+
+Black			=	$(shell echo -e "\033[0;30m")
+FBlack			=	$(shell echo -e "\033[1;30m")
+Red				=	$(shell echo -e "\033[0;31m")
+FRed			=	$(shell echo -e "\033[1;31m")
+Green			=	$(shell echo -e "\033[0;32m")
+FGreen			=	$(shell echo -e "\033[1;32m")
+Brown/Orange	=	$(shell echo -e "\033[0;33m")
+FBrown/Orange	=	$(shell echo -e "\033[1;33m")
+FYellow			=	$(shell echo -e "\033[1;33m")
+Yellow			=	$(shell echo -e "\033[0;33m")
+Blue			=	$(shell echo -e "\033[0;34m")
+FBlue			=	$(shell echo -e "\033[1;34m")
+Purple			=	$(shell echo -e "\033[0;35m")
+FPurple			=	$(shell echo -e "\033[1;35m")
+Cyan			=	$(shell echo -e "\033[0;36m")
+FCyan			=	$(shell echo -e "\033[1;36m")
+FWhite			=	$(shell echo -e "\033[1;37m")
+White			=	$(shell echo -e "\033[0;37m")
+NC				=	$(shell echo -e "\033[0m")
+
+PRONAME	=	libftio
+NAME	=	libftio.a
+#DEPDIR	=	libft
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -Iincludes
 
