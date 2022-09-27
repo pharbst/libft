@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/09/27 15:29:51 by pharbst          ###   ########.fr        #
+#    Updated: 2022/09/27 16:03:10 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,26 +98,6 @@ FILES	=	ft_atoi.c \
 			ft_printf.c\
 			ft_printf_helper.c\
 			get_next_line_bonus.c\
-
-Black			=	\033[0;30m
-FBlack			=	\033[1;30m
-Red				=	\033[0;31m
-FRed			=	\033[1;31m
-Green			=	\033[0;32m
-FGreen			=	\033[1;32m
-Brown/Orange	=	\033[0;33m
-FBrown/Orange	=	\033[1;33m
-FYellow			=	\033[1;33m
-Yellow			=	\033[0;33m
-Blue			=	\033[0;34m
-FBlue			=	\033[1;34m
-Purple			=	\033[0;35m
-FPurple			=	\033[1;35m
-Cyan			=	\033[0;36m
-FCyan			=	\033[1;36m
-FWhite			=	\033[1;37m
-White			=	\033[0;37m
-NC				=	\033[0m
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
