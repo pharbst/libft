@@ -28,7 +28,7 @@ static int	ft_getelen(char const *src, char c)
 	return (total);
 }
 
-int	ft_free(char **cache, int j)
+static int	ft_free(char **cache, int j)
 {
 	if (!cache[j])
 	{
