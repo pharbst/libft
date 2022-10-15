@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:13:35 by pharbst           #+#    #+#             */
-/*   Updated: 2022/09/15 17:41:54 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/10/14 20:28:14 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_stash(int fd, char *stash)
 	char	*buff;
 	int		n;
 
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buff = malloc(BUFFER_SIZE * sizeof(char));
 	if (!buff)
 		return (NULL);
 	n = BUFFER_SIZE;
@@ -71,18 +71,15 @@ char	*ft_stash(int fd, char *stash)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash[4096];
+	static char	*stash;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stash[fd] = ft_stash(fd, stash[fd]);
-	line = get_line(stash[fd]);
-	stash[fd] = ft_new_stash(stash[fd]);
+	stash = ft_stash(fd, stash);
+	line = get_line(stash);
+	stash = ft_new_stash(stash);
 	if (!line || line[0] == '\0')
-	{
-		free(line);
-		return (NULL);
-	}
+		return (free(line), NULL);
 	return (line);
 }
