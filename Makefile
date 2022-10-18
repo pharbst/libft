@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/10/14 20:26:33 by pharbst          ###   ########.fr        #
+#    Updated: 2022/10/15 13:50:20 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ PRONAME	=	libftio
 NAME	=	libftio.a
 #DEPDIR	=	libft
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -I includes
+CFLAGS	=	-Wall -Wextra -Werror -I includes -g
 
 SRCDIR	=	./src
 

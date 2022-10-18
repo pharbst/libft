@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:13:35 by pharbst           #+#    #+#             */
-/*   Updated: 2022/10/14 20:28:14 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/10/18 14:03:43 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,31 @@ char	*ft_new_stash(char *stash)
 {
 	char	*new_stash;
 
-	if (!ft_strchr(stash, '\n'))
-		return (NULL);
-	new_stash = ft_strdup(ft_strchr(stash, '\n') + 1);
+	new_stash = NULL;
+	if (stash &&!ft_strchr(stash, '\n'))
+		return (free(stash), NULL);
+	if (stash)
+		new_stash = ft_strdup(ft_strchr(stash, '\n') + 1);
 	free(stash);
 	return (new_stash);
 }
 
-char	*get_line(char *stash)
+char	*get_line(char **stash)
 {
 	char	*line;
 	size_t	n;
 
-	if (!stash)
+	if (!*stash)
 		return (NULL);
-	if (!ft_strchr(stash, '\n'))
-		return (line = ft_strdup(stash), free(stash), line);
-	line = malloc(((ft_strchr(stash, '\n') - stash) + 2) * sizeof(char));
+	if (!ft_strchr(*stash, '\n'))
+		return (line = ft_strdup(*stash), free(*stash), *stash = NULL, line);
+	line = malloc(((ft_strchr(*stash, '\n') - *stash) + 2) * sizeof(char));
 	if (!line)
-		return (free(stash), NULL);
+		return (free(*stash), NULL);
 	n = 0;
-	while (stash[n] != '\n')
+	while ((*stash)[n] != '\n')
 	{
-		line[n] = stash[n];
+		line[n] = (*stash)[n];
 		n++;
 	}
 	line[n++] = '\n';
@@ -77,9 +79,9 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = ft_stash(fd, stash);
-	line = get_line(stash);
+	line = get_line(&stash);
 	stash = ft_new_stash(stash);
-	if (!line || line[0] == '\0')
-		return (free(line), NULL);
-	return (line);
+	if (ft_strlen(line) > 0)
+		return (line);
+	return (free(line), NULL);
 }
