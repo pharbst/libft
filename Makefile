@@ -6,11 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2022/09/27 16:06:39 by pharbst          ###   ########.fr        #
-=======
-#    Updated: 2022/11/06 15:03:05 by pharbst          ###   ########.fr        #
->>>>>>> 6f12c30 (changed Makefile output)
+#    Updated: 2022/11/06 15:10:17 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
