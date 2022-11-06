@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/06 15:03:05 by pharbst          ###   ########.fr        #
+#    Updated: 2022/11/06 15:11:52 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,7 @@ $(NAME):	$(OBJS)
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@mkdir -p $(OBJDIR)
 	@echo "$(FGreen)Compiling:$(RESET) $<"
-	@$(CC) $(CFLAGS) -o $@ -c $< -I includes
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	@echo "$(FRed)make clean $(PRONAME)$(Red)"
