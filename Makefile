@@ -6,7 +6,11 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2022/09/27 16:06:39 by pharbst          ###   ########.fr        #
+=======
+#    Updated: 2022/11/06 15:03:05 by pharbst          ###   ########.fr        #
+>>>>>>> 6f12c30 (changed Makefile output)
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,16 +34,15 @@ Cyan			=	$(shell echo -e "\033[0;36m")
 FCyan			=	$(shell echo -e "\033[1;36m")
 FWhite			=	$(shell echo -e "\033[1;37m")
 White			=	$(shell echo -e "\033[0;37m")
-NC				=	$(shell echo -e "\033[0m")
+RESET			=	$(shell echo -e "\033[0m")
 
 PRONAME	=	libftio
 NAME	=	libftio.a
-#DEPDIR	=	libft
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -Iincludes
 
+HEADER	=	./includes/libftio.h
 SRCDIR	=	./src
-
 OBJDIR	=	./obj
 
 FILES	=	ft_atoi.c \
@@ -73,32 +76,44 @@ FILES	=	ft_atoi.c \
 			ft_strdup.c \
 			ft_strjoin.c \
 			ft_strtrim.c \
-			ft_substr.c\
-			ft_strmapi.c\
-			ft_striteri.c\
-			ft_lstnew.c\
-			ft_lstadd_front.c\
-			ft_lstsize.c\
-			ft_lstlast.c\
-			ft_lstadd_back.c\
-			ft_lstdelone.c\
-			ft_lstclear.c\
-			ft_lstiter.c\
-			ft_lstmap.c\
+			ft_substr.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			ft_bufferjoin.c \
+			ft_buffinit.c \
+			ft_chartostr.c \
+			ft_itohex.c \
+			ft_ptrtohex.c \
+			ft_strjoinchar.c \
+			ft_strjoinfree.c \
+			ft_strlower.c \
+			ft_strupper.c \
+			ft_uitoa.c \
+			ft_printf.c \
+			ft_printf_helper.c \
+			get_next_line.c \
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
 
+all:	$(NAME)
 
-all:	start $(NAME) end
-
-$(NAME):	ostart $(OBJS) oend
+$(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c includes/libft.h
+$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -o $@ -c $<
-	@echo "$(NC)$@"
+	@echo "$(FGreen)Compiling:$(RESET) $<"
+	@$(CC) $(CFLAGS) -o $@ -c $< -I includes
 
 clean:
 	@echo "$(FRed)make clean libft$(Red)"
@@ -110,24 +125,7 @@ fclean:
 	rm -rf $(OBJDIR)
 	rm -rf $(NAME)
 
-re:	restart fclean all rend
-
-start:
-	@echo "$(FYellow)make $(PRONAME)...$(NC)"
-
-end:
-	@echo "$(FGreen)$(PRONAME) done$(NC)"
-
-ostart:
-	@echo "$(Blue)creating object files...$(NC)"
-oend:
-	@echo "$(Green)object files created$(NC)"
-
-restart:
-	@echo "$(FPurple)recompiling...$(NC)"
-
-rend:
-	@echo "$(FGreen)recompiled$(NC)"
+re:	fclean all
 
 git:	commit push
 
