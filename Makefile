@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/06 15:11:52 by pharbst          ###   ########.fr        #
+#    Updated: 2022/11/07 10:49:26 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,6 +105,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+	@echo "$(FGreen)Done"
 
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@mkdir -p $(OBJDIR)
