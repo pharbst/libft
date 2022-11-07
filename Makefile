@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/07 10:49:26 by pharbst          ###   ########.fr        #
+#    Updated: 2022/11/07 20:22:29 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,10 +118,10 @@ clean:
 	rm -rf $(OBJDIR)
 
 fclean:
-	@echo "$(FRed)make flcean $(PRONAME)$(Red)"
-	@rm -rf $(OBJS)
-	rm -rf $(OBJDIR)
-	rm -rf $(NAME)
+	@echo "$(FRed)Cleaning $(PRONAME)$(Red)"
+	@rm -rf $(OBJDIR)
+	@rm -rf $(NAME)
+	@echo "$(RESET)"
 
 re:	fclean all
 
