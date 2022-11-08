@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/08 22:15:56 by pharbst          ###   ########.fr        #
+#    Updated: 2022/11/08 22:20:17 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(FGreen)Done"
+	@echo "$(FGreen)Done$(RESET)"
 
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@mkdir -p $(OBJDIR)
@@ -117,6 +117,7 @@ clean:
 	@echo "$(FRed)make clean $(PRONAME)$(Red)"
 	@rm -rf $(OBJS)
 	rm -rf $(OBJDIR)
+	@echo "$(RESET)"
 
 fclean:
 	@echo "$(FRed)Cleaning $(PRONAME)$(Red)"
