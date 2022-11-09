@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2022/11/08 21:55:01 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/11/09 14:25:36 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ t_buff		ft_printp(unsigned long ptr, t_buff buff);
 char		*get_next_line(int fd);
 
 //additional in additional folder
-int	ft_strcmp(const char *s1, const char *s2);
+int			ft_strcmp(const char *s1, const char *s2);
+void		ft_free_split(char **src);
 
 #endif
