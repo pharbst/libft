@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:13:35 by pharbst           #+#    #+#             */
-/*   Updated: 2022/10/18 14:03:43 by pharbst          ###   ########.fr       */
+/*   Updated: 2022/11/10 00:52:16 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_stash(int fd, char *stash)
 	char	*buff;
 	int		n;
 
-	buff = malloc(BUFFER_SIZE * sizeof(char));
+	buff = malloc(BUFFER_SIZE * sizeof(char) + 1);
 	if (!buff)
 		return (NULL);
 	n = BUFFER_SIZE;
