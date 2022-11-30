@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/09 14:41:58 by pharbst          ###   ########.fr        #
+#    Updated: 2022/11/30 04:15:35 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ FCyan			=	$(shell echo -e "\033[1;36m")
 FWhite			=	$(shell echo -e "\033[1;37m")
 White			=	$(shell echo -e "\033[0;37m")
 RESET			=	$(shell echo -e "\033[0m")
+TICK			=	$(shell echo -e "\xE2\x9C\x94")
 
 PRONAME	=	libftio
 NAME	=	libftio.a
@@ -104,31 +105,45 @@ FILES	=	ft_atoi.c \
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
+OBJ_FLAG	=	0
 
-all:	$(NAME)
+all:
+	@./spinner.sh make $(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	header obj_header $(OBJS) linking_header
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(FGreen)Done$(RESET)"
+	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@mkdir -p $(OBJDIR)
-	@echo "$(FGreen)Compiling:$(RESET) $(notdir $<)"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
-clean:
-	@echo "$(FRed)make clean $(PRONAME)$(Red)"
+clean: header
+	@printf "$(FRed)Clean $(PRONAME)$(FGreen)				"
 	@rm -rf $(OBJS)
-	rm -rf $(OBJDIR)
-	@echo "$(RESET)"
+	@rm -rf $(OBJDIR)
+	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
-fclean:
-	@echo "$(FRed)Cleaning $(PRONAME)$(Red)"
+fclean: header
+	@./spinner.sh make cleanall
+
+cleanall:
+	@printf "$(FRed)FCleaning $(PRONAME)$(FGreen)$(RESET)			"
 	@rm -rf $(OBJDIR)
 	@rm -rf $(NAME)
-	@echo "$(RESET)"
+	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
-re:	fclean all
+re:
+	@./spinner.sh make header cleanall $(NAME)
+
+header:
+	@echo "$(FBlue)====================$(FYellow)$(PRONAME)$(FBlue)====================$(RESET)"
+
+obj_header:
+	@printf "$(FBlue)Compiling .o files$(RESET)			"
+
+linking_header:
+	@printf "$(FGreen)[$(TICK)]\n$(Green)Linking $(PRONAME)$(RESET)				"
 
 git:	commit push
 
@@ -141,4 +156,4 @@ push:
 update:
 	git pull
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re header
