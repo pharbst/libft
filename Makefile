@@ -108,7 +108,7 @@ OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 OBJ_FLAG	=	0
 
 all:
-	@./spinner.sh make $(NAME)
+	@./spinner.sh make -s $(NAME)
 
 $(NAME):	header obj_header $(OBJS) linking_header
 	@ar rcs $(NAME) $(OBJS)
@@ -125,7 +125,7 @@ clean: header
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 fclean: header
-	@./spinner.sh make cleanall
+	@./spinner.sh make -s cleanall
 
 cleanall:
 	@printf "$(FRed)FCleaning $(PRONAME)$(FGreen)$(RESET)			   "
@@ -134,7 +134,7 @@ cleanall:
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 re:
-	@./spinner.sh make header cleanall $(NAME)
+	@./spinner.sh make -s header cleanall $(NAME)
 
 header:
 	@printf "$(FYellow)╔════════════════════════════════════════════╗\n\
