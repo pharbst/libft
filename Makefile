@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/30 04:15:35 by pharbst          ###   ########.fr        #
+#    Updated: 2022/12/05 09:10:11 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,7 @@ $(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean: header
-	@printf "$(FRed)Clean $(PRONAME)$(FGreen)				"
+	@printf "$(FRed)Clean $(PRONAME)$(FGreen)				   "
 	@rm -rf $(OBJS)
 	@rm -rf $(OBJDIR)
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
@@ -128,7 +128,7 @@ fclean: header
 	@./spinner.sh make cleanall
 
 cleanall:
-	@printf "$(FRed)FCleaning $(PRONAME)$(FGreen)$(RESET)			"
+	@printf "$(FRed)FCleaning $(PRONAME)$(FGreen)$(RESET)			   "
 	@rm -rf $(OBJDIR)
 	@rm -rf $(NAME)
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
@@ -137,13 +137,18 @@ re:
 	@./spinner.sh make header cleanall $(NAME)
 
 header:
-	@echo "$(FBlue)====================$(FYellow)$(PRONAME)$(FBlue)====================$(RESET)"
+	@printf "$(FYellow)╔════════════════════════════════════════════╗\n\
+║   .-.   .-..----. .----..---. .-. .----.   ║\n\
+║   | |   | || {}  }| {_ {_   _}| |/  {}  \\  ║\n\
+║   | \`--.| || {}  }| |    | |  | |\\      /  ║\n\
+║   \`----'\`-'\`----' \`-'    \`-'  \`-' \`----'   ║\n\
+╚════════════════════════════════════════════╝\n"
 
 obj_header:
-	@printf "$(FBlue)Compiling .o files$(RESET)			"
+	@printf "$(FBlue)Compiling .o files$(RESET)			   "
 
 linking_header:
-	@printf "$(FGreen)[$(TICK)]\n$(Green)Linking $(PRONAME)$(RESET)				"
+	@printf "$(FGreen)[$(TICK)]\n$(Green)Linking $(PRONAME)$(RESET)				   "
 
 git:	commit push
 
