@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/12/05 09:10:11 by pharbst          ###   ########.fr        #
+#    Updated: 2023/01/30 20:13:39 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ TICK			=	$(shell echo -e "\xE2\x9C\x94")
 PRONAME	=	libftio
 NAME	=	libftio.a
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -I includes -g
+CFLAGS	=	-Wall -Wextra -Werror -I includes
+CFLAGS	+=	-g
+# CFLAGS	+=	-fsanatize=address
 
 HEADER	=	./includes/libftio.h
 SRCDIR	=	./src
@@ -104,8 +106,6 @@ FILES	=	ft_atoi.c \
 			ft_free_split.c \
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
-
-OBJ_FLAG	=	0
 
 all:
 	@./spinner.sh make -s $(NAME)
