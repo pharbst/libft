@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2023/02/09 00:01:21 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/02/09 00:05:41 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,6 @@ char		*get_next_line(int fd);
 //additional in additional folder
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_free_split(char **src);
-bool		ft_isspace(char c);
+bool		ft_isspace(int c);
 
 #endif
