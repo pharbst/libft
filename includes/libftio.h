@@ -6,13 +6,14 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2022/11/09 14:25:36 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/02/09 00:01:21 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTIO_H
 # define LIBFTIO_H
 
+# include <stdbool.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
@@ -112,5 +113,6 @@ char		*get_next_line(int fd);
 //additional in additional folder
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_free_split(char **src);
+bool		ft_isspace(char c);
 
 #endif

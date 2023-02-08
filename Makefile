@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2023/02/02 06:49:12 by pharbst          ###   ########.fr        #
+#    Updated: 2023/02/09 00:02:47 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,8 +102,11 @@ FILES	=	ft_atoi.c \
 			ft_printf.c \
 			ft_printf_helper.c \
 			get_next_line.c \
+\
 			ft_strcmp.c \
 			ft_free_split.c \
+			ft_isspace.c \
+
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
