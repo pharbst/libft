@@ -20,7 +20,7 @@ char	*ft_strjoinfree(char *str1, char *str2)
 
 	if (!str1)
 	{
-		if (!str2)
+		if (!str2 || !*str2)
 			return (NULL);
 		return (ft_strdup(str2));
 	}

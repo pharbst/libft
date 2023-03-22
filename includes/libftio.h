@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2023/02/09 00:15:17 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/03/22 07:18:33 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <fcntl.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 32
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 10240
 # endif
 
 typedef struct s_list
@@ -108,12 +113,13 @@ t_buff		ft_printux(unsigned long nbr, t_buff buff);
 t_buff		ft_printp(unsigned long ptr, t_buff buff);
 
 //GetNextLine
-char		*get_next_line(int fd);
+char		*gnl(int fd);
 
 //additional in additional folder
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_free_split(char **src);
 int			ft_isspace(int c);
 char		*ft_strftrim(char *str, int (*f)(int));
+char		*strjoinfree(char *s1, char *s2);
 
 #endif
