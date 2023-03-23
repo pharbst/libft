@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 06:08:02 by pharbst           #+#    #+#             */
-/*   Updated: 2023/03/22 13:07:50 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/03/23 09:33:04 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ static char	*get_line(char *stash, char *line)
 {
 	if (ft_strchr(stash, '\n'))
 	{
-		line = strjoinfree(line, ft_substr(stash, 0, (ft_strchr(stash, '\n') - stash) + 1));
-		ft_memmove(stash, ft_strchr(stash, '\n') + 1, ft_strlen(ft_strchr(stash, '\n') + 1) + 1);
+		line = strjoinfree(line, ft_substr(stash, 0, (ft_strchr(stash, '\n')
+						- stash) + 1));
+		ft_memmove(stash, ft_strchr(stash, '\n') + 1,
+			ft_strlen(ft_strchr(stash, '\n') + 1) + 1);
 	}
 	else
 	{
