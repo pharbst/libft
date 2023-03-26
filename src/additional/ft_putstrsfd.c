@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strjoinfree.c                                      :+:      :+:    :+:   */
+/*   ft_putstrsfd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 13:25:51 by pharbst           #+#    #+#             */
-/*   Updated: 2023/03/26 06:11:30 by pharbst          ###   ########.fr       */
+/*   Created: 2023/03/26 03:20:24 by pharbst           #+#    #+#             */
+/*   Updated: 2023/03/26 03:23:37 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftio.h"
 
-char	*strjoinfree(char *s1, char *s2)
+void	ft_putstrsfd(int fd, const char *str, ...)
 {
-	char	*str;
+	va_list	ap;
 
-	if (!s1)
+	va_start(ap, str);
+	while (str)
 	{
-		if (!s2)
-			return (NULL);
-		return (s2);
+		ft_putstr_fd(str, fd);
+		str = va_arg(ap, const char *);
 	}
-	if (!s2)
-		return (s1);
-	str = ft_strjoin(s1, s2);
-	return (free(s1), free(s2), str);
+	va_end(ap);
 }

@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2023/03/22 07:18:33 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/03/26 03:22:39 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,6 @@ void		ft_free_split(char **src);
 int			ft_isspace(int c);
 char		*ft_strftrim(char *str, int (*f)(int));
 char		*strjoinfree(char *s1, char *s2);
+void		ft_putstrsfd(int fd, const char *str, ...);
 
 #endif

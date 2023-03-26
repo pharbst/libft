@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2023/03/22 07:17:05 by pharbst          ###   ########.fr        #
+#    Updated: 2023/03/26 03:23:15 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,7 @@ FILES	=	ft_atoi.c \
 			ft_free_split.c \
 			ft_isspace.c \
 			ft_strftrim.c \
+			ft_putstrsfd.c \
 			strjoinfree.c \
 
 
