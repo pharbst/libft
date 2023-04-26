@@ -6,7 +6,7 @@
 #    By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2023/04/26 23:21:05 by pharbst          ###   ########.fr        #
+#    Updated: 2023/04/26 23:29:56 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,14 +32,18 @@ FWhite			=	$(shell echo -e "\033[1;37m")
 White			=	$(shell echo -e "\033[0;37m")
 RESET			=	$(shell echo -e "\033[0m")
 
-PRONAME	=	libftio
-NAME	=	libftio.a
+PRONAME	=	libft
+NAME	=	libft.a
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -Iincludes
+CFLAGS	=	-Wall -Wextra -Werror -I includes
 
 HEADER	=	./includes/libftio.h
 SRCDIR	=	./src
 OBJDIR	=	./obj
+
+VPATH	:=	src \
+			src/mandatory \
+			src/bonus
 
 FILES	=	ft_atoi.c \
 			ft_bzero.c \
@@ -87,13 +91,12 @@ FILES	=	ft_atoi.c \
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
-
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
+$(OBJDIR)/%.o:	%.c
 	@mkdir -p $(OBJDIR)
 	@echo "$(FGreen)Compiling:$(RESET) $<"
 	@$(CC) $(CFLAGS) -o $@ -c $< -I includes
@@ -113,12 +116,12 @@ re:	fclean all
 git:	commit push
 
 commit:
-	git commit -m "$(msg)"
+	git commit
 
 push:
-	git push -u
+	git push
 
 update:
 	git pull
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re git commit push update
