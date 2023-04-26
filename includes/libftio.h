@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftio.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2023/03/26 08:16:36 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/04/26 22:26:45 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <sys/time.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 32
@@ -123,5 +124,17 @@ char		*ft_strftrim(char *str, int (*f)(int));
 char		*strjoinfree(char *s1, char *s2);
 /*last argument has to be NULL*/
 void		ft_putstrsfd(int fd, const char *str, ...);
+
+typedef struct s_fps
+{
+	uint64_t	prev_t;
+	uint64_t	prev_s;
+	uint64_t	fps_log[120];
+	uint32_t	i;
+	uint64_t	t;
+	uint64_t	t_delta;
+	uint16_t	fps_delta;
+}	t_fps;
+int			fps_counter(void);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
+#    By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2023/03/26 03:23:15 by pharbst          ###   ########.fr        #
+#    Updated: 2023/04/26 22:51:56 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,16 +33,38 @@ White			=	$(shell echo -e "\033[0;37m")
 RESET			=	$(shell echo -e "\033[0m")
 TICK			=	$(shell echo -e "\xE2\x9C\x94")
 
-PRONAME	=	libftio
-NAME	=	libftio.a
-CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -I includes
-CFLAGS	+=	-g
+PRONAME		=	libftio
+MAC_NAME	=	libftio.a
+LINUX_NAME	=	libftio_linux.a
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -I includes
+CFLAGS		+=	-g
 # CFLAGS	+=	-fsanatize=address
+
+MAC_OBJDIR		=	./obj
+LINUX_OBJDIR	=	./obj_linux
 
 HEADER	=	./includes/libftio.h
 SRCDIR	=	./src
-OBJDIR	=	./obj
+# checks for OS Mac or Linux and sets the correct objdir and name this is useful if you are switching the os often
+ifeq ($(shell uname), Darwin)
+	OBJDIR	=	$(MAC_OBJDIR)
+	NAME	=	$(MAC_NAME)
+else
+	OBJDIR	=	$(LINUX_OBJDIR)
+	NAME	=	$(LINUX_NAME)
+endif
+
+VPATH		:=	src \
+				src/mandatory \
+				src/bonus \
+				src/ft_printf \
+				src/get_next_line \
+				src/additional
+
+#################################
+#			Mandatory           #
+#################################
 
 FILES	=	ft_atoi.c \
 			ft_bzero.c \
@@ -77,9 +99,13 @@ FILES	=	ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_strmapi.c \
-			ft_striteri.c \
-\
-			ft_lstnew.c \
+			ft_striteri.c
+
+#############################
+#           Bonus           #
+#############################
+
+FILES	+=	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -87,9 +113,13 @@ FILES	=	ft_atoi.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c \
-\
-			ft_bufferjoin.c \
+			ft_lstmap.c
+
+#################################
+#           ft_printf           #
+#################################
+
+FILES 	+=	ft_bufferjoin.c \
 			ft_buffinit.c \
 			ft_chartostr.c \
 			ft_itohex.c \
@@ -101,28 +131,40 @@ FILES	=	ft_atoi.c \
 			ft_uitoa.c \
 			ft_printf.c \
 			ft_printf_helper.c \
-			better_gnl.c \
-\
-			ft_strcmp.c \
+			better_gnl.c
+
+##################################
+#           Additional           #
+##################################
+
+FILES	+=	ft_strcmp.c \
 			ft_free_split.c \
 			ft_isspace.c \
 			ft_strftrim.c \
 			ft_putstrsfd.c \
 			strjoinfree.c \
-
+			fps_counter.c
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
-all:
-	@./spinner.sh make -s $(NAME)
-
-$(NAME):	header obj_header $(OBJS) linking_header
-	@ar rcs $(NAME) $(OBJS)
+all: header obj_header
+	@./spinner.sh make -s $(OBJS)
+	@make -s linking_header
+	@make -s $(NAME)
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
-$(OBJDIR)/%.o:	$(SRCDIR)/*/%.c
+$(NAME):	$(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+
+$(OBJDIR)/%.o:	%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
+
+relink: header
+	@rm -rf $(NAME)
+	@printf "$(Green)Relinking $(PRONAME)$(RESET)			   "
+	@ar rcs $(NAME) $(OBJS)
+	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 clean: header
 	@printf "$(FRed)Clean $(PRONAME)$(FGreen)				   "
@@ -139,8 +181,19 @@ cleanall:
 	@rm -rf $(NAME)
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
+wipe: header
+	@./spinner.sh make -s fcleanall
+
+fcleanall:
+	@printf "$(FRed)Wiping $(PRONAME)$(FGreen)$(RESET)				   "
+	@rm -rf $(MAC_OBJDIR)
+	@rm -rf $(MAC_NAME)
+	@rm -rf $(LINUX_OBJDIR)
+	@rm -rf $(LINUX_NAME)
+	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
+
 re:
-	@./spinner.sh make -s header cleanall $(NAME)
+	@./spinner.sh make -s header cleanall all
 
 header:
 	@printf "$(FYellow)╔════════════════════════════════════════════╗\n\
@@ -167,4 +220,4 @@ push:
 update:
 	git pull
 
-.PHONY:	all clean fclean re header
+.PHONY: all clean fclean re header obj_header linking_header git commit push update

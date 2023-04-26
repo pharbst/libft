@@ -1,4 +1,5 @@
 /obj
+/obj_linux
 libftio.a
 *.a
 main.c
