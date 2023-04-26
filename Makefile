@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+         #
+#    By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2022/11/06 15:10:17 by pharbst          ###   ########.fr        #
+#    Updated: 2023/04/26 23:21:05 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,20 +83,7 @@ FILES	=	ft_atoi.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c \
-			ft_bufferjoin.c \
-			ft_buffinit.c \
-			ft_chartostr.c \
-			ft_itohex.c \
-			ft_ptrtohex.c \
-			ft_strjoinchar.c \
-			ft_strjoinfree.c \
-			ft_strlower.c \
-			ft_strupper.c \
-			ft_uitoa.c \
-			ft_printf.c \
-			ft_printf_helper.c \
-			get_next_line.c \
+			ft_lstmap.c
 
 OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
