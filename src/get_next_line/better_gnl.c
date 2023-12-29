@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   better_gnl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 06:08:02 by pharbst           #+#    #+#             */
-/*   Updated: 2023/03/23 09:33:04 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/12/23 19:03:21 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ static char	*read_line(int fd, char *stash)
 
 	line = NULL;
 	n = BUFFER_SIZE;
-	while (n == BUFFER_SIZE && !ft_strchr(stash, '\n'))
+	while (n == BUFFER_SIZE && !ft_strchr(stash[fd], '\n'))
 	{
 		line = ft_strjoinfree(line, stash);
-		n = read(fd, stash, BUFFER_SIZE);
+		n = read(fd, stash[fd], BUFFER_SIZE);
 		stash[n] = '\0';
 		if (n == -1)
 			return (NULL);
 	}
-	return (get_line(stash, line));
+	return (get_line(stash[fd], line));
 }
 
 char	*gnl(int fd)
