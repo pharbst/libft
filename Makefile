@@ -6,32 +6,11 @@
 #    By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 09:33:42 by peter             #+#    #+#              #
-#    Updated: 2023/04/26 22:51:56 by pharbst          ###   ########.fr        #
+#    Updated: 2023/11/12 04:00:09 by pharbst          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SHELL=	/bin/bash
-
-Black			=	$(shell echo -e "\033[0;30m")
-FBlack			=	$(shell echo -e "\033[1;30m")
-Red				=	$(shell echo -e "\033[0;31m")
-FRed			=	$(shell echo -e "\033[1;31m")
-Green			=	$(shell echo -e "\033[0;32m")
-FGreen			=	$(shell echo -e "\033[1;32m")
-Brown/Orange	=	$(shell echo -e "\033[0;33m")
-FBrown/Orange	=	$(shell echo -e "\033[1;33m")
-FYellow			=	$(shell echo -e "\033[1;33m")
-Yellow			=	$(shell echo -e "\033[0;33m")
-Blue			=	$(shell echo -e "\033[0;34m")
-FBlue			=	$(shell echo -e "\033[1;34m")
-Purple			=	$(shell echo -e "\033[0;35m")
-FPurple			=	$(shell echo -e "\033[1;35m")
-Cyan			=	$(shell echo -e "\033[0;36m")
-FCyan			=	$(shell echo -e "\033[1;36m")
-FWhite			=	$(shell echo -e "\033[1;37m")
-White			=	$(shell echo -e "\033[0;37m")
-RESET			=	$(shell echo -e "\033[0m")
-TICK			=	$(shell echo -e "\xE2\x9C\x94")
+include color.mk
 
 PRONAME		=	libftio
 MAC_NAME	=	libftio.a
@@ -45,7 +24,6 @@ MAC_OBJDIR		=	./obj
 LINUX_OBJDIR	=	./obj_linux
 
 HEADER	=	./includes/libftio.h
-SRCDIR	=	./src
 # checks for OS Mac or Linux and sets the correct objdir and name this is useful if you are switching the os often
 ifeq ($(shell uname), Darwin)
 	OBJDIR	=	$(MAC_OBJDIR)
@@ -150,7 +128,7 @@ OBJS	=	$(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 all: header obj_header
 	@./spinner.sh make -s $(OBJS)
 	@make -s linking_header
-	@make -s $(NAME)
+	@./spinner.sh make -s $(NAME)
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 $(NAME):	$(OBJS)
@@ -193,7 +171,7 @@ fcleanall:
 	@printf "$(FGreen)[$(TICK)]\n$(RESET)"
 
 re:
-	@./spinner.sh make -s header cleanall all
+	@$(MAKE) -s header cleanall all
 
 header:
 	@printf "$(FYellow)╔════════════════════════════════════════════╗\n\
@@ -220,4 +198,4 @@ push:
 update:
 	git pull
 
-.PHONY: all clean fclean re header obj_header linking_header git commit push update
+.PHONY: all clean fclean re header obj_header linking_header git commit push update cleanall fcleanall wipe relink
