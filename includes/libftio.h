@@ -23,7 +23,13 @@
 # include <sys/time.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+# define BUFFER_SIZE 4096
+# elif BUFFER_SIZE < 1
+# undef BUFFER_SIZE
+# define BUFFER_SIZE 4096
+# elif BUFFER_SIZE > 4096
+# undef BUFFER_SIZE
+# define BUFFER_SIZE 4096
 # endif
 
 # ifndef OPEN_MAX
