@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 17:42:41 by pharbst           #+#    #+#             */
-/*   Updated: 2023/04/26 22:26:45 by pharbst          ###   ########.fr       */
+/*   Updated: 2023/12/19 11:44:47 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@
 # include <sys/time.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
+# define BUFFER_SIZE 4096
+# elif BUFFER_SIZE < 1
+# undef BUFFER_SIZE
+# define BUFFER_SIZE 4096
+# elif BUFFER_SIZE > 4096
+# undef BUFFER_SIZE
+# define BUFFER_SIZE 4096
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 10240
+#  define OPEN_MAX 1024
 # endif
 
 typedef struct s_list
