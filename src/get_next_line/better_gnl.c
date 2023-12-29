@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 06:08:02 by pharbst           #+#    #+#             */
-/*   Updated: 2023/12/29 22:02:05 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/29 22:06:26 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 static char	*get_line(char *stash, char *line)
 {
-	if (ft_strchr(stash, '\n'))
+	char	*char_after_nl;
+
+	char_after_nl = ft_strchr(stash, '\n');
+	if (char_after_nl)
 	{
-		line = strjoinfree(line, ft_substr(stash, 0, (ft_strchr(stash, '\n')
+		line = strjoinfree(line, ft_substr(stash, 0, (char_after_nl
 						- stash) + 1));
-		ft_memmove(stash, ft_strchr(stash, '\n') + 1,
-			ft_strlen(ft_strchr(stash, '\n') + 1) + 1);
+		ft_memmove(stash, char_after_nl + 1, ft_strlen(char_after_nl + 1) + 1);
 	}
 	else
 	{
