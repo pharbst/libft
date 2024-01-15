@@ -26,15 +26,15 @@ char	*ft_strjoinfree(char *str1, char *str2)
 		*str1 = '\0';
 	}
 	if (!str2)
-	{
-		free(str1);
 		return (str1);
-	}
 	len1 = ft_strlen(str1);
 	len2 = ft_strlen(str2);
 	dest = malloc((len1 + len2 + 1) * sizeof(char));
 	if (!dest)
+	{
+		free(str1);
 		return (NULL);
+	}
 	ft_memcpy(dest, str1, (len1 + 1));
 	ft_memcpy((dest + len1), str2, (len2 + 1));
 	free(str1);
