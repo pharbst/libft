@@ -6,7 +6,7 @@
 /*   By: pharbst <pharbst@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 06:08:02 by pharbst           #+#    #+#             */
-/*   Updated: 2024/01/10 19:07:30 by pharbst          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:52:46 by pharbst          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 static char	*get_line(char *stash, char *line)
 {
-	char	*char_after_nl;
+	char	*nl_char;
 
-	char_after_nl = ft_strchr(stash, '\n');
-	if (char_after_nl)
+	nl_char = ft_strchr(stash, '\n');
+	if (nl_char)
 	{
-		line = strjoinfree(line, ft_substr(stash, 0, (char_after_nl
-						- stash) + 1));
-		ft_memmove(stash, char_after_nl + 1, ft_strlen(char_after_nl + 1) + 1);
+		line = strjoinfree(line, ft_substr(stash, 0, (nl_char - stash) + 1));
+		ft_memmove(stash, nl_char + 1, ft_strlen(nl_char + 1) + 1);
 	}
 	else
 	{
